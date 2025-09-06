@@ -1,2 +1,4 @@
 mountpoints:
-  /: <sharepoint url>
+  /:
+    url: https://content.da.live/rusmeenkhan1/content-filter-hub/
+    type: markup
