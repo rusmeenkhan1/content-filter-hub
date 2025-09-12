@@ -10,7 +10,7 @@ main .filter-container {
 
 main .section .projects-listing-container {
     max-width: unset;
-    background-color: var(--projet-bg-page-listing);
+    background-color: var(--project-bg-page-listing);
     padding: 35px 0;
 }
 
