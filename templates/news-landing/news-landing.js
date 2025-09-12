@@ -92,8 +92,6 @@ function parseDate(dateStr) {
 }
 
 export default async function decorate(doc) {
-  console.log(doc);
-  
   const $main = doc.querySelector('main');
   const $section = doc.querySelector('main .section:last-of-type');
   const $filterContainer = div({ class: 'filter-container' });
