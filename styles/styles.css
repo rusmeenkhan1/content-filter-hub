@@ -19,6 +19,27 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
+  --project-bg-page-listing: #edecea;
+  --btn-bg: #c5cbcb;
+  --input-placeholder-color: #B69859;
+  --site-color-2: #839790;
+  --input-selected-color: #5a626b;
+  --article-bg: #6f7d7c;
+  --brown-bg: #918063;
+  --news-button-text-colour: #fff;
+  --site-color: #6B7E7C;
+  --news-bg-enavant: #d3cec7;
+
+  --projet-bg-page-listing: #edecea;
+  --btn-bg: #c5cbcb;
+  --input-placeholder-color: #B69859;
+  --site-color-2: #839790;
+  --input-selected-color: #5a626b;
+  --site-color: #6B7E7C;
+  --project-button-text-colour: #fff;
+  --news-button-text-colour: #fff;
+  --project-bg-enavant: #d3cec7;
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;

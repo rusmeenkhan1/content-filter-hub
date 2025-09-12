@@ -120,20 +120,6 @@ main .filter-container .projects-listing-container-right {
     margin-bottom: 20px;
 }
 
-main .filter-container .projects-listing-container-right .map-link-btn {
-    font-size: 36px;
-    padding-right: 40px;
-    background-repeat: no-repeat;
-    background-position: right center;
-    letter-spacing: .1em;
-    font-weight: 400 !important;
-    background-image: url('../../icons/btn_arbres_carte_map.svg');
-    color: var(--site-color-2);
-    transition: color 0.5s;
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-} 
 
 .projects-landing main .filter-container input {
     border: none;
@@ -142,7 +128,7 @@ main .filter-container .projects-listing-container-right .map-link-btn {
 }
 
 .projects-landing .btn-search-clear {
-    background-image: url('../../icons/btn_arbres_filter_back.svg');
+    background-image: url('../../icons/btn_filter_back.svg');
     height: 40px;
     width: 30px;
     display: block;
@@ -163,7 +149,6 @@ main .projects-listing {
 }
 
 .projects-listing .project-item {
-    background-color: var(--project-bg-arbres);
     grid-column: span 2;
     color: black;
     text-decoration: none;
@@ -175,7 +160,7 @@ main .projects-listing {
 }
 
 .projects-listing .project-item.brown {
-    background-color: var(--project-bg-bien);
+    background-color: var(--brown-bg);
 }
 
 .projects-listing .projects-image-wrapper {

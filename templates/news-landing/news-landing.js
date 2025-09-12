@@ -9,7 +9,6 @@ import { getLanguage } from '../../scripts/scripts.js';
 import { applyFadeUpAnimation, setInputWidthToText } from '../../scripts/utils.js';
 
 async function getNewsdata() {
-  const { hostname } = window.location;
   let rawNews = [];
 
   // Helper function to safely fetch with ffetch
@@ -24,44 +23,13 @@ async function getNewsdata() {
     }
   };
 
-  // Determine the path based on domain
-  if (hostname.includes('arbres')) {
-    const newsPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'fondation-pour-les-arbres-news' : 'fondation-pour-les-arbres-actualites'}/news-index.json`;
-    const result = await safeFetch(newsPath);
-    if (result) {
-      if (getLanguage() === 'fr') {
-        rawNews = result.filter((news) => news.path.includes('/fr/fondation-pour-les-arbres-actualites/'));
-      } else {
-        rawNews = result.filter((news) => news.path.includes('/en/fondation-pour-les-arbres-news/'));
-      }
-    }
-  } else if (hostname.includes('biencommun')) {
-    const newsPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'fondation-pour-le-bien-commun-news' : 'fondation-pour-le-bien-commun-actualites'}/news-index.json`;
-    const result = await safeFetch(newsPath);
-    if (result) {
-      if (getLanguage() === 'fr') {
-        rawNews = result.filter((news) => news.path.includes('/fr/fondation-pour-le-bien-commun-actualites/'));
-      } else {
-        rawNews = result.filter((news) => news.path.includes('/en/fondation-pour-le-bien-commun-news/'));
-      }
-    }
-  } else {
-    // For localhost or other domains, try arbres first, fallback to biencommun
-    const arbresPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'fondation-pour-les-arbres-news' : 'fondation-pour-les-arbres-actualites'}/news-index.json`;
-    const bienCommunPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'fondation-pour-le-bien-commun-news' : 'fondation-pour-le-bien-commun-actualites'}/news-index.json`;
-
-    let result = await safeFetch(arbresPath);
-
-    // ffetch returns empty array for 404s instead of throwing error
-    // So we check if result is null OR an empty array, then try fallback
-    if (!result || (Array.isArray(result) && result.length === 0)) {
-      result = await safeFetch(bienCommunPath);
-    }
-
-    if (result && Array.isArray(result) && result.length > 0) {
-      rawNews = result;
+  const newsPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'news' : 'actualites'}/news-index.json`;
+  const result = await safeFetch(newsPath);
+  if (result) {
+    if (getLanguage() === 'fr') {
+      rawNews = result.filter((news) => news.path.includes('/fr/actualites/'));
     } else {
-      rawNews = []; // Ensure it's an empty array
+      rawNews = result.filter((news) => news.path.includes('/en/news/'));
     }
   }
   return rawNews;
@@ -124,6 +92,8 @@ function parseDate(dateStr) {
 }
 
 export default async function decorate(doc) {
+  console.log(doc);
+  
   const $main = doc.querySelector('main');
   const $section = doc.querySelector('main .section:last-of-type');
   const $filterContainer = div({ class: 'filter-container' });
