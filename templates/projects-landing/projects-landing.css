@@ -1,0 +1,310 @@
+main .filter-container {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: auto;
+    font-size: 36px;
+    position: relative;
+}
+
+main .section .projects-listing-container {
+    max-width: unset;
+    background-color: var(--projet-bg-page-listing);
+    padding: 35px 0;
+}
+
+main .filter-container .category-input {
+    opacity: 1;
+    position: relative;
+    left: 0;
+    cursor: pointer;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1.01;
+    outline: none;
+}
+
+main .filter-container .location-input {
+    cursor: pointer;
+}
+
+main .filter-container .category-dropdown, main .filter-container .location-dropdown {
+    border: none;
+    margin: 24px 0;
+    border-top: 0 none;
+    box-shadow: none;
+    font-size: 16px;
+    position: absolute;
+    max-height: 200px;
+    display: none;
+    z-index: 99;
+}
+
+main .filter-container .category-dropdown ul, main .filter-container .location-dropdown ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden auto;
+    max-height: 200px;
+}
+
+main .filter-container .category-dropdown ul li, main .filter-container .location-dropdown ul li {
+    list-style: none;
+    cursor: pointer;
+    width: 180.297px;
+    opacity: 1;
+    position: relative;
+    left: 0;
+    background: var(--btn-bg);
+    padding: 5px 18px;
+}
+
+main .filter-container .category-dropdown ul li:hover, main .filter-container .location-dropdown ul li:hover {
+    font-weight: 500;
+}
+
+main .filter-container .input-category-span, main .filter-container .input-location-span {
+    position: absolute;
+    visibility: hidden;
+    white-space: pre;
+}
+
+main .filter-container .search-input {
+    opacity: 1;
+    position: relative;
+    left: 0;
+    cursor: pointer;
+    text-transform: none;
+    font-weight: 400;
+    line-height: 1.01;
+    padding: 0 10px;
+}
+
+main .filter-container .search-input::placeholder {
+    color: var(--input-placeholder-color);
+}
+
+main .filter-container .projects-listing-container-left, 
+main .filter-container .projects-listing-container-left .category-section,
+main .filter-container .projects-listing-container-left .location-section,
+main .filter-container .projects-listing-container-left .search-section {
+    display: inline-block
+}
+
+main .filter-container .projects-listing-container-left .filter-separator {
+    padding: 0 10px;
+    text-transform: none;
+    font-weight: 400 ;
+    line-height: 1.01;
+}
+
+main .filter-container .projects-listing-container-left .view-all {
+    color: var(--site-color-2);
+    text-transform: none;
+    font-weight: 400 ;
+    line-height: 1.01;
+    letter-spacing: .1em;
+    text-align: center;
+    white-space: nowrap;
+}
+
+main .filter-container .projects-listing-container-left .view-all:hover {
+    text-decoration: none;
+    opacity: .7;
+}
+
+main .filter-container .projects-listing-container-right {
+    display: flex;
+    gap: 5px;
+    align-self: end;
+    margin-bottom: 20px;
+}
+
+main .filter-container .projects-listing-container-right .map-link-btn {
+    font-size: 36px;
+    padding-right: 40px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    letter-spacing: .1em;
+    font-weight: 400 !important;
+    background-image: url('../../icons/btn_arbres_carte_map.svg');
+    color: var(--site-color-2);
+    transition: color 0.5s;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+} 
+
+.projects-landing main .filter-container input {
+    border: none;
+    outline: none;
+    color: var(--input-selected-color);
+}
+
+.projects-landing .btn-search-clear {
+    background-image: url('../../icons/btn_arbres_filter_back.svg');
+    height: 40px;
+    width: 30px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-top: 4px;
+}
+
+
+main .projects-listing {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: auto;
+    height: auto;
+    padding: 35px 20px;
+}
+
+.projects-listing .project-item {
+    background-color: var(--project-bg-arbres);
+    grid-column: span 2;
+    color: black;
+    text-decoration: none;
+}
+
+.projects-listing .project-item:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.projects-listing .project-item.brown {
+    background-color: var(--project-bg-bien);
+}
+
+.projects-listing .projects-image-wrapper {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+}
+
+.projects-listing .projects-image-wrapper img {
+    min-height: 100%;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.projects-listing .projects-title {
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0;
+    text-transform: uppercase
+}
+
+.projects-listing .projects-partner {
+    color: var(--site-color-2);
+    text-transform: uppercase
+}
+
+.projects-listing .projects-location, .projects-listing .projects-duration {
+    color: var(--site-color);
+    text-transform: uppercase
+}
+
+.projects-listing .projects-category {
+    color: var(--site-color-2);
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase
+}
+
+
+.projects-listing .project-date {
+    color: var(--project-button-text-colour);
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 10px;
+    letter-spacing: .06em;
+}
+
+.projects-listing .project-item.horizontal-banner .project-date {
+    color: var(--site-color);
+}
+
+.projects-listing .project-title  {
+    color: var(--news-button-text-colour);
+    font-size: 18px;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.projects-listing .project-description {
+    line-height: 1.5em;
+    padding-bottom: 20px;
+    letter-spacing: .02em;
+}
+
+.project-item .clear {
+    clear: both;
+}
+
+.projects-listing .project-item.horizontal-banner {
+    background-color: var(--project-bg-enavant);
+}
+
+@media (width >= 600px) {
+    main .projects-listing {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .projects-listing .project-item {
+        grid-column: span 1;
+    }
+
+    main .filter-container {
+        font-size: 36px;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    main .filter-container .projects-listing-container-left {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        float: left;
+    }
+
+    main .filter-container .projects-listing-container-right {
+        align-self: center;
+        white-space: nowrap;
+        float: right;
+        margin-left: auto;
+    }
+}
+
+@media (width >= 900px) {
+    main .projects-listing {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        padding: 0 80px;
+    }
+
+    main .projects-listing h2  {
+        color: black;
+        font-size: 18px;
+        text-transform: none;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+}
