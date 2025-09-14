@@ -63,7 +63,7 @@ The system automatically picks the correct text based on the **active language**
 
 # Language Detection
 The system automatically detects the current language from the URL path using the getLanguage() function. This logic is implemented in scripts/scripts.js and handles the URL parsing and language detection.
-- Fetch mappings from placeholders - see loadAllPlaceholders() in scripts.js
+- Fetch mappings from placeholders - see fetchPlaceholders() in aem.js
 - Fetch mapping from metadata - see loadTemplate() in scripts.js
 
   
