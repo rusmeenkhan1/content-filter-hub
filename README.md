@@ -62,9 +62,9 @@ The system automatically picks the correct text based on the **active language**
 3. Preview/publish changes to see them take effect.
 
 # Language Detection
-The system automatically detects the current language from the URL path using the getLanguage() function. This logic is implemented in scripts/scripts.js and handles the URL parsing and language detection.
-- Fetch mappings from placeholders - see fetchPlaceholders() in aem.js
-- Fetch mapping from metadata - see loadTemplate() in scripts.js
+The system automatically detects the current language from the URL path using the `getLanguage()` function. This logic is implemented in `scripts/scripts.js` and handles the URL parsing and language detection.
+- fetch mappings from `placeholders.json` for the placeholder text (depending on language chosen)
+- Fetch mapping from metadata for choosing the template (news/projects)
 
   
 The landing templates (`/templates/news-landing.js` and `/templates/project-landing.js`) power the filtering and search functionality on the News and Projects landing pages.  
