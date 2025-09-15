@@ -22,7 +22,6 @@ async function getNewsdata() {
       return null;
     }
   };
-
   const newsPath = `/${getLanguage()}/${getLanguage() === 'en' ? 'news' : 'actualites'}/news-index.json`;
   const result = await safeFetch(newsPath);
   if (result) {

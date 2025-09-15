@@ -44,51 +44,6 @@ export function applyFadeUpAnimation(targetElement, parentContainer) {
   observer.observe(targetWrapper);
 }
 
-// Apply fade-up animation to split-fade sections on fondations site
-function applyFadeUpAnimationSplitFade() {
-  const splitFadeSections = document.querySelectorAll('.section.fade-up');
-  splitFadeSections.forEach((section) => {
-    const imageElement = section.querySelector('picture');
-    const parentContainer = section.querySelector('p:last-of-type');
-
-    // Only apply animation if both elements exist within this section
-    if (imageElement && parentContainer) {
-      applyFadeUpAnimation(imageElement, parentContainer);
-    }
-  });
-}
-
-// Wait for DOM to be ready and then try with a small delay
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(applyFadeUpAnimationSplitFade, 50);
-  });
-} else {
-  setTimeout(applyFadeUpAnimationSplitFade, 50);
-}
-
-export function decorateListingCards(doc) {
-  const contentDivs = doc.querySelectorAll('.section.float-right .default-content-wrapper');
-  contentDivs.forEach((contentDiv) => {
-    const containerCol = div({ class: 'container-col' });
-    const clearDiv = div({ class: 'clear' });
-    const clearDivInner = div({ class: 'clear' });
-    const headingWrapper = div({ class: 'heading-wrapper' });
-    const contentWrapper = div({ class: 'content-wrapper' });
-    const children = Array.from(contentDiv.children);
-    children.forEach((child) => {
-      if (child.tagName === 'H1' || child.tagName === 'H2') {
-        headingWrapper.appendChild(child);
-      } else {
-        contentWrapper.appendChild(child);
-      }
-    });
-    contentWrapper.appendChild(clearDivInner);
-    containerCol.append(headingWrapper, contentWrapper, clearDiv);
-    contentDiv.append(containerCol);
-  });
-}
-
 export function setInputWidthToText(inputEl) {
   const textToMeasure = inputEl.value || inputEl.placeholder;
   const spanForWidth = document.createElement('span');
